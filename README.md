@@ -10,7 +10,7 @@ Using what you have learned about Express, Express Routing, RESTful routing, CRU
 
 ## **Requirements**: 
 
-1. The model you choose to use should have at least three fields, as well an id field. 
+1. Choose a model that you'd like to build an api about! The model you choose to use should have at least three fields, as well an id field.
 
 *Example:*
 
