@@ -62,3 +62,5 @@ Add two new routes:
 |--------|:---:|:--------------|
 | GET | /parents/:id/children | list all children of the parent with the given id |
 | POST | /parents/:id/children | create a new child that belongs to the parent with the given id |
+
+Once you have these routes, your server file will contain Too Many Routes, and the clutter level will be too high. Move the original 5 children routes into a controller, and move the 2 new parent routes into a separate controller.
