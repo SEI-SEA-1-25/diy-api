@@ -34,6 +34,7 @@ Using what you have learned about Express, Express Routing, RESTful routing, CRU
 | PUT | update | /widgets/:id | update one widget |
 | DELETE | delete | /widgets/:id | delete one widget |
 
+3. Move these routes into their own controller, and `app.use` that controller in your main server file.
 -------
 
 ## **Steps to Achieve**
@@ -56,11 +57,14 @@ Using what you have learned about Express, Express Routing, RESTful routing, CRU
 ## Bonus:
 Add a second model to your API. This model should be a parent to your first model via a 1:M relationship. For example: if your first model was `books`, your second model might be `libraries`. A library would haveMany books, and each book would belong to 1 library.
 
-Add two new routes:
+Add these new routes:
 
 | Method | URL | Functionality |
 |--------|:---:|:--------------|
+| GET | /parents | list all parents |
+| GET | /parents/:id | show a single parent |
+| POST | /parents | create a new parent |
 | GET | /parents/:id/children | list all children of the parent with the given id |
 | POST | /parents/:id/children | create a new child that belongs to the parent with the given id |
 
-Once you have these routes, your server file will contain Too Many Routes, and the clutter level will be too high. Move the original 5 children routes into a controller, and move the 2 new parent routes into a separate controller.
+Get these routes working in your main server file first. Then, once they're working, move them into their own controller, and `app.use` that controller in your main server file.
