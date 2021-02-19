@@ -34,7 +34,7 @@ Using what you have learned about Express, Express Routing, RESTful routing, CRU
 | PUT | update | /widgets/:id | update one widget |
 | DELETE | delete | /widgets/:id | delete one widget |
 
-3. Move these routes into their own controller, and `app.use` that controller in your main server file.
+3. Move these routes into their own controller, and mount that controller in your main server file.
 -------
 
 ## **Steps to Achieve**
@@ -67,4 +67,4 @@ Add these new routes:
 | GET | /parents/:id/children | list all children of the parent with the given id |
 | POST | /parents/:id/children | create a new child that belongs to the parent with the given id |
 
-Get these routes working in your main server file first. Then, once they're working, move them into their own controller, and `app.use` that controller in your main server file.
+Get these routes working in your main server file first. Then, once they're working, move them into their own controller, and mount that controller in your main server file.
