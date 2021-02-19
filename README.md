@@ -1,4 +1,4 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) DIY API — Homework
+# DIY API
 
 ## **Deliverable**:
 
@@ -26,9 +26,7 @@ Using what you have learned about Express, Express Routing, RESTful routing, CRU
 
 2. Your API should be accessible via five routes: 
 
-*Example:*
-
-| Method | Action | URL | Functionality |
+| Method | Nickname | URL | Functionality |
 |--------|:------:|:---:|:--------------|
 | GET | index | /widgets | list all widgets |
 | POST | create | /widgets | add a widget |
@@ -42,22 +40,25 @@ Using what you have learned about Express, Express Routing, RESTful routing, CRU
 
 **You will need to:**
 1. Fork and clone this repository!
-2. Run `npm init` to start your node project. 
-3. Create a `.gitignore` and add everything to ignore
-4. Create your Express App
-5. Sequelize init
+1. Run `npm init` to start your node project. 
+1. Create a `.gitignore` and add everything to ignore
+1. Set up Sequelize, create your tables & models
+1. Set up your Express App, create your routes
 
 **Recommended Workflow:**
+1. Declare your model and migrate.
 1. Stub out your routes, write them `res.send("test")` for initial decleration.
-2. Declare your model and migrate.
-3. Link your model to your server.
-4. Update your routes and make the magic happen!
+1. Link your model to your server.
+1. Update your routes and make the magic happen!
 
 -------
 
 ## Bonus:
-Add a second model to your API. This model should relate to your first model via a 1:M relationship. 
+Add a second model to your API. This model should be a parent to your first model via a 1:M relationship. For example: if your first model was `books`, your second model might be `libraries`. A library would haveMany books, and each book would belong to 1 library.
 
-Once added, update your GET and POST routes for this second model which allow you do the following with your API: 
-1. Show all elements from second model that relate to your element from first model at :id. 
-2. Add a new element to your original model that include related elements from this second model at :id.
+Add two new routes:
+
+| Method | URL | Functionality |
+|--------|:---:|:--------------|
+| GET | /parents/:id/children | list all children of the parent with the given id |
+| POST | /parents/:id/children | create a new child that belongs to the parent with the given id |
