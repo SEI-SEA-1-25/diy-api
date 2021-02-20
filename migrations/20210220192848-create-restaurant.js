@@ -17,7 +17,7 @@ module.exports = {
       chef: {
         type: Sequelize.STRING
       },
-      location: {
+      street: {
         type: Sequelize.STRING
       },
       createdAt: {
