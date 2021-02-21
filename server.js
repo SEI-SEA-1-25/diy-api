@@ -1,7 +1,7 @@
 // Required Modules
 const express = require('express')
 const rowdy = require('rowdy-logger')
-const db = require('./models')
+// const db = require('./models')
 const restaurants = require('./controllers/restaurants-controller')
 const locations = require('./controllers/locations-controller')
 

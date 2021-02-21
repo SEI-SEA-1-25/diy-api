@@ -11,13 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.location.hasMany(models.restaurant)
     }
   };
   location.init({
     street: DataTypes.STRING,
     region: DataTypes.STRING,
-    bus: DataTypes.INTEGER,
+    bus: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'location',
