@@ -1,0 +1,13 @@
+[
+  { "breed": "poodle", "breedOriginId": "101", "breedTraitId": "201" },
+  {
+    "breed": "miniature dachshund",
+    "breedOriginId": "102",
+    "breedTraitId": "202"
+  },
+  {
+    "breed": "old english sheepdog",
+    "breedOriginId": "103",
+    "breedTraitId": "203"
+  }
+]
