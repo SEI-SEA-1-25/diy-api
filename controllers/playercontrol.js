@@ -1,4 +1,5 @@
 const router = require('express').Router()
+
 const db = require('../models')
 
 
@@ -25,7 +26,7 @@ router.put('/:id', async (req, res) => {
     try {
         const onePlayer = await db.player.findByPk(req.params.id)
         const updatePlayer = await onePlayer.update({
-            club: req.body.club,
+            nationality: req.body.club,
             age: req.body.age
         })
         res.send(updatePlayer)

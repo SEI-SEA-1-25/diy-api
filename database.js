@@ -1,11 +1,15 @@
+const db = require('./models');
 const models = require('./models')
 
-const player1 = async () => {
-    models.player.create({
-        name: "Virgil van Dijk",
-        age: 29,
-        nationality: "Netherlands",
-        club: "Liverpool FC"
-    })
-}
+const clubInformation = require('./soccerclub.json')
+
+// const player1 = async () => {
+//     clubInformation.foreach(c => models.club.create(c))
+// }
 // player1()
+
+
+const playerCreate = async () => {
+    models.club.bulkCreate(clubInformation)
+}
+playerCreate()
