@@ -2,7 +2,7 @@
   "name": "diy-api",
   "version": "1.0.0",
   "description": "## **Deliverable**:",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/SunilDeveloper7/diy-api#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "pg": "^8.5.1",
+    "rowdy-logger": "^1.0.2",
     "sequelize": "^6.5.0"
   }
 }
