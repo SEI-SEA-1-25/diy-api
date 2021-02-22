@@ -8,5 +8,17 @@ const makeWarrior = async() =>{
         height:6
     })
 }
-
 makeWarrior()
+
+
+
+
+const makeChampionship =async() => {
+    models.championship.create({
+        warriorId: 1946,
+        year_won: 2018,
+        most_mvp: 'stephen Curry'
+    })
+}
+makeChampionship()
+

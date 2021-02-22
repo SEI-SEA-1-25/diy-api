@@ -13,73 +13,38 @@ const rowdyResults = rowdy.begin(app)
 app.use(express.urlencoded({ extended: false}))
 //urlencoded gets the form data from the request and puts it inside of req body
 
+//controller
+app.use('/warriors',require('./controllers/warriorController'))
+
+
 //Routes
 app.get('/', (req,res) => {
     res.send('hello world from express...hi')
 })
 
 
-//CRUD route for warriors
-//Index (Read all) Route
-app.get('/warriors', async (req,res) => {
-    try {
-        const warriors = await db.warrior.findAll()
-        res.send(warriors)
-    } catch (err) {
-        console.log(err)
-    }
-})
-// Show (Show One) Route
-app.get('/warriors/:id', async (req, res) => {
-    try {
-        const warrior = await db.warrior.findByPk(req.params.id)
-        res.send(warrior)
-    } catch (err) {
-        console.log(err)
-    }
-})
 
-app.post('/warriors',async(req,res) => {
+
+//CRUD routes for championship
+//Index (show all)
+app.get('/championships',async (req,res) => {
     try {
-        //console.log(req.body);
-        const newWarrior =await db.warrior.create({
-            player_name:req.body.player_name,
-            previous_team:req.body.previous_team,
-            salary:req.body.salary,
-            height:req.body.height
-        })
-        res.send(newWarrior);
+        const championships = await db.championship.findAll();
+        res.send(championships);
     } catch(err) {
         console.log(err)
     }
 })
 
-app.put('/warriors/:id' , async(req,res) => {
+//show (Read one)
+app.get('/championships/:id',async (req,res) => {
     try {
-        const warrior = await db.warrior.findByPk(req.params.id)
-        const updatedWarrior = await warrior.update({
-            player_name: req.body.player_name,
-            previous_team:req.body.previous_team,
-            salary:req.body.salary,
-            height:req.body.height
-        })
-        res.send(updatedWarrior)
+        const championship = await db.championship.findByPk(req.params.id)
+        res.send(championship)
     } catch(err) {
         console.log(err)
-
     }
 })
-
-app.delete('/warriors/:id' ,async(req,res) => {
-    try {
-        const warrior =await db.warrior.findByPk(req.params.id)
-        const deletedWarrior = await warrior.destroy();
-        res.send(deletedWarrior);
-    } catch {
-
-    }
-})
-
 
 
 
