@@ -75,9 +75,6 @@ const newAlbum = async () => {
         })
         console.log(inThroughTheOutDoor)
 
-
-
-
     }catch(err){
      console.log(err)   
     }
