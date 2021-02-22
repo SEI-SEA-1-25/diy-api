@@ -1,0 +1,45 @@
+[
+    {
+        "name": "Royal Purple",
+        "hex": "#7851A9",
+        "rgb": "(121, 81, 169)",
+        "hsl": "(267, 35%, 49%)",
+        "description": "Strong violet"
+    },
+    {
+        "name": "Mauve",
+        "hex": "#E0B0FF",
+        "rgb": "224, 179, 255",
+        "hsl": "276, 100%, 85%",
+        "description": "Brilliant purple"
+    },
+    {
+        "name": "Purpureus",
+        "hex": "#9A4EAE",
+        "rgb": "152, 77, 172",
+        "hsl": "287, 38%, 49%",
+        "description": "Vivid purple"
+    },
+    {
+        "name": "Northwestern Purple",
+        "hex": "#4E2A84",
+        "rgb": "78, 42, 132",
+        "hsl": "264, 52%, 34%",
+        "description": "Deep violet"
+    },
+    {
+        "name": "Mardi Gras",
+        "hex": "#880085",
+        "rgb": "138, 0, 135",
+        "hsl": "301, 100%, 27%",
+        "description": "Vivid reddish purple"
+    },
+    {
+        "name": "Eminence",
+        "hex": "#6C3082",
+        "rgb": "108, 48, 130",
+        "hsl": "284, 46%, 35%",
+        "description": "Deep purple"
+    }
+    
+]
