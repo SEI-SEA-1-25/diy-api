@@ -12,11 +12,12 @@ const rowdyResults = rowdy.begin(app);
 app.use(express.urlencoded({extended: false}));
 
 //routes
-app.get('/', (req, res)=> {
-    res.send('Hello World, this is Sarah Marie')
-})
+// app.get('/', (req, res)=> {
+//     res.send('Hello World, this is Sarah Marie')
+// })
 
 app.use('/purples', require('./controllers/purpleController'));
+app.use('/color', require('./controllers/colorController'))
 
 app.listen(PORT, ()=> {
     rowdyResults.print()
