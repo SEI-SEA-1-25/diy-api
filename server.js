@@ -49,6 +49,29 @@ app.post("/neopets", async (req, res) => {
     }
 })
 
+app.put("/neopets/:id", async (req, res) => {
+    try{
+        const neopet = await db.neopet.findByPk(req.params.id);
+        const updatedNeopet = await neopet.update({
+            hails_from: req.body.hails_from,
+            species: req.body.species,
+            name: req.body.name 
+        })
+        res.send(updatedNeopet)
+    } catch (err) {
+        console.log(err)
+    }
+})
+
+app.delete("/neopets/:id", async (re, res) => {
+    try {
+        const neopet = await db.creature.findByPk(rew.params.id);
+        const deletedNeopet = neopet.destroy();
+        res.send(deletedNeopet)
+    } catch (err) {
+        console.log(err)
+    }
+})
 
 // Start the server
 app.listen(PORT, () => {

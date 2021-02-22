@@ -7,8 +7,52 @@ createdb neopet_db
 sequelize model:generate --name=neopet --attributes  hails_from:string,species:string,name:string
 sequelize db:migrate
 
+sequelize model:generate --name=land --attributes  name:string,species:string,name:string
+sequelize db:migrate
+
 touch server.js
 touch dbTest.js
 
 npm i express
 npm i sequelize pg rowdy-logger
+
+sequelize db:create
+
+// Required modules
+const express = require("express");
+const rowdy = require("rowdy-logger");
+const db = require("./models");
+
+// Variables
+const app = express();
+const PORT = 3000;
+const rowdyResults = rowdy.begin(app);
+
+// Middleware
+app.use(express.urlencoded({ extended: false }));
+
+app.get("/countries", (req, res) => {
+    models/country.findAll().then(allCountries) => {
+        res.json({ countries: countries })
+    }
+})
+ use top level key ^^^
+
+ app.post("/countries", (req, res) => {
+     console.log(req.body);
+     models.country.create({
+
+     })
+ })
+
+ define association:
+ models.continent.hasMany(models.country)
+
+ router.post("/:id/countries", async (req, res) => {
+     const continent = await models.continent.findByPk(req.params.id)
+
+     const country = await continent.createCountry({
+         name: req.body.name
+     })
+     res.json({country})
+ })
