@@ -9,6 +9,14 @@ const PORT = 3000;
 const rowdyResults = rowdy.begin(app)
 
 
+
+// const PORT = process.env.PORT || 3000
+// app.listen(PORT,() => {
+//     console.log('server started !');
+    // rowdyResults()
+// })
+
+
 //Middleware
 app.use(express.urlencoded({ extended: false}))
 //urlencoded gets the form data from the request and puts it inside of req body
