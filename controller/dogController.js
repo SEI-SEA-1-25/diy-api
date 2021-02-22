@@ -1,9 +1,10 @@
-//const models = require('../models')
+const models = require('../models')
+const router = require('express').Router()
 
 
 
 
-app.get('/dogs', async (req, res) => {
+router.get('/', async (req, res) => {
     try{
         const dog = await models.dog.findAll()
         res.send(dog)
@@ -13,7 +14,7 @@ app.get('/dogs', async (req, res) => {
     }
 })
 
-app.post('/dogs', async (req, res) => {
+router.post('/', async (req, res) => {
     try{
         const createDog = await models.dog.create({
             name: req.body.name,
@@ -29,7 +30,7 @@ app.post('/dogs', async (req, res) => {
 })
 
 
-app.get('/dogs/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try{
         const dog = await models.dog.findByPk(req.params.id)
         res.send(dog)
@@ -40,7 +41,7 @@ app.get('/dogs/:id', async (req, res) => {
 
 
 
-app.put('/dogs/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
     try{
         const dogs = await models.dog.findByPk(req.params.id)
         const updateDog = await dogs.update({
@@ -56,7 +57,7 @@ app.put('/dogs/:id', async (req, res) => {
     }
 })
 
-app.delete('/dogs/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try{
         const dog = await models.dog.findByPk(req.params.id)
         const deleteDog = await dog.destroy()
@@ -65,3 +66,5 @@ app.delete('/dogs/:id', async (req, res) => {
         console.log(err)
     }
 })
+
+module.exports = router
