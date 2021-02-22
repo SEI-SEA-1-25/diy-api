@@ -1,0 +1,14 @@
+npm init -y
+npm install sequelize pg
+echo node_modules >> .gitignore
+sequelize init
+
+createdb neopet_db
+sequelize model:generate --name=neopet --attributes  hails_from:string,species:string,name:string
+sequelize db:migrate
+
+touch server.js
+touch dbTest.js
+
+npm i express
+npm i sequelize pg rowdy-logger
