@@ -30,3 +30,49 @@ app.get('./dogs/:id', async (req, res) => {
         console.log(error)
     }
 })
+
+// create
+app.post('/dogs', async (req, res) => {
+    try {
+        const newDog = await db.dog.create({
+            name: req.body.name,
+            breed: req.body.breed,
+            loud: req.body.loud
+        })
+        res.send(newDog)
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+// update
+app.put('/dogs/:id', async (req, res) => {
+    try {
+        const dog = await db.dog.findByPK(req, params.id)
+        const updatedDog = await dog.update({
+            name: req.body.name,
+            breed: req.body.breed,
+            loud: req.body.loud
+        })
+        res.send(updatedDog)
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+// delete
+app.delete('/dog/:id', async (req, res) => {
+    try {
+        const dog = await db.dog.findByPK(req, params.id)
+        const deleteDog = await dog.destroy();
+        res.send(deleteDog)
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+// Start the server!
+app.listen(PORT, () => {
+    rowdyResults.print()
+    console.log(`Server is listening on port ${PORT}`)
+})
