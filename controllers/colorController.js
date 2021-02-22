@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     }
 })
 
-// Read Parent of one child 
+// Read Parent of one child *COMPOUND*
 router.get('/:id/purples', async (req, res) => {
     try {
         const color = await db.color.findByPk(req.params.id)
@@ -40,18 +40,18 @@ router.post('/', async (req, res) => {
         console.log(error)
     }
 })
-// // read all children of parent
-// router.get('/:id/purples', async (req, res) => {
-//     try{
-//         const color = await db.color.findByPk(req.params.id)
-//         const purples = await color.getPurples()
-//         res.send(purples)
+// // read all children of parent *COMPOUND*
+router.get('/:id/purples', async (req, res) => {
+    try{
+        const color = await db.color.findByPk(req.params.id)
+        const purples = await color.getPurples()
+        res.send(purples)
 
-//     } catch (error) {
-//         console.log(error)
-//     }
-// })
-//Create child of parent
+    } catch (error) {
+        console.log(error)
+    }
+})
+//Create child of parent *COMPOUND*
 router.post('/:id/purples', async (req, res) => {
     try {
         const color = await db.color.findByPk(req.params.id)
@@ -60,7 +60,8 @@ router.post('/:id/purples', async (req, res) => {
             hex: req.body.hex,
             rgb: req.body.rgb,
             hsl: req.body.hsl,
-            description: req.body.description
+            description: req.body.description,
+            colorId: req.body.colorId
         })
         res.send(newPurple)
     } 

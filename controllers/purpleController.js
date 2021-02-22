@@ -32,8 +32,8 @@ router.get('/:id', async (req, res) => {
 //Index (Read All) Route 
 router.get('/', async (req, res) => {
     try {
-        const purples = await db.purple.findAll()
-        res.send(purples)
+        const allPurples = await db.purple.findAll()
+        res.send(allPurples)
     } 
     catch (error) {
         console.log(error)
@@ -49,7 +49,8 @@ router.put('/:id', async (req, res) => {
             hex: req.body.hex,
             rgb: req.body.rgb,
             hsl: req.body.hsl,
-            description: req.body.description
+            description: req.body.description,
+            colorId: req.body.colorId
         })
         res.send(updatePurple)
     } 

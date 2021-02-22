@@ -19,7 +19,8 @@ module.exports = (sequelize, DataTypes) => {
     hex: DataTypes.STRING,
     rgb: DataTypes.STRING,
     hsl: DataTypes.STRING,
-    description: DataTypes.STRING
+    description: DataTypes.STRING,
+    colorId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'purple',
