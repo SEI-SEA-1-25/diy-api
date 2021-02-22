@@ -67,3 +67,28 @@ router.delete('/:id', async (req, res)=> {
         console.log(err)
     }
 })
+
+/// To add a new Song that belongs to an album
+router.post('/:id/songs', async (req, res) => {
+    try{
+        // console.log(req.body)
+        const album = await db.album.findByPk(req.params.id)
+        const newSong = await album.createSong({
+            song_title: req.body.song_title,
+            song_length: req.body.song_length
+        })
+        res.send(newSong);
+    }catch(err){
+     console.log(err)
+    }
+})
+
+router.get('/:id/songs', async (req, res) => {
+    try{
+        const album = await db.album.findByPk(req.params.id)
+        const songs = await album.getSongs()
+        res.send(songs)
+    }catch(err){
+        console.log(err)
+    }
+})

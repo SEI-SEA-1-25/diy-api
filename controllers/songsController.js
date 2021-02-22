@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
     try{
         const song = await db.song.findByPk(req.params.id)
-        const updatedSong = await song.update({
+        const updatedSong = await db.song.update({
             song_title: req.body.song_title,
             song_length: req.body.song_length
         })
@@ -51,7 +51,7 @@ router.put('/:id', async (req, res) => {
 router.delete ('/:id', async (req, res) => {
     try{
      const song = await db.song.findByPk(req.params.id)
-     const deletedSong = await song.destroy();
+     const deletedSong = await db.song.destroy();
      res.send(deletedSong)
     }catch(err){
         console.log(err)
