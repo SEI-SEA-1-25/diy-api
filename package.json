@@ -1,0 +1,19 @@
+{
+  "name": "diy-api",
+  "version": "1.0.0",
+  "description": "## **Deliverable**:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henry-mcdonald/diy-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/henry-mcdonald/diy-api/issues"
+  },
+  "homepage": "https://github.com/henry-mcdonald/diy-api#readme"
+}
